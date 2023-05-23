@@ -6,12 +6,12 @@ library(glue)
 library(stringr)
 
 # Load Data (Source: University of Toronto, The G7 Research Group, URL: "http://www.g7.utoronto.ca/summit/index.htm" )
-files <- list.files("C:/Users/Home/Desktop/G7_TXT")
+files <- list.files("https://github.com/solowiew/showcase/tree/main/text_analysis/input")
 
 # Write a function that takes the name of a file 
 # and returns the number of word uses in this file
 GetWordCount <- function(file){
-fileName <- glue("C:/Users/Home/Desktop/G7_TXT/", file, sep = "")
+fileName <- glue("https://github.com/solowiew/showcase/tree/main/text_analysis/input/", file, sep = "")
 fileName <- trimws(fileName)
 fileText <- glue(read_file(fileName)) # read in the new file
 # excluding special characters from text
@@ -51,7 +51,7 @@ wordcounts <- wordcounts[, c(6, 5, 1, 2, 3, 4)]
 View(wordcounts)
 
 # Save final output
-setwd("C:/Users/Home/Desktop")
+# setwd("C:/Users/Home/Desktop")
 write.csv(wordcounts, "G7_WORD_COUNTS.csv") # preprint version
 
 # Data Visualization
